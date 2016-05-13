@@ -1,4 +1,4 @@
-import re
+﻿import re
 
 
 def elementyStruktury(RNA_kropkowo_nawiasowa):
@@ -8,6 +8,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     kropki = []
     pojedynczyLancuch = []
     petla = []
+    wybrzuszenie = []
     for i, j in enumerate(RNA_kropkowo_nawiasowa):
             mapaWiazan[i] = None
     for i, j in enumerate(RNA_kropkowo_nawiasowa):
@@ -33,17 +34,27 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     kropkiIterator = kropka.finditer(RNA_kropkowo_nawiasowa)
     for kr in kropkiIterator:
         kropki.append(kr.span())
-    #for kr in kropki:
-        #print("kropki", kr)
     for kr in kropki:
-        poczatek = kr[0]
-        koniec = kr[1]
+        print("kropki", kr)
+    for kr in kropki:
+        poczatek = kr[0] #pierwszy z pary kropek
+        koniec = kr[1] #drugi z pary kropek
+       
+        for sp in spinkiDoWlosow:
+            print("spinka", sp[0], sp[1])
+       
         if poczatek == 0 or koniec>len(RNA_kropkowo_nawiasowa)-1:
             pojedynczyLancuch.append((poczatek,koniec-1))
             continue
-        if RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]=='(':
-            pojedynczyLancuch.append((poczatek,koniec-1))
+        if ((RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]==')') or (RNA_kropkowo_nawiasowa[poczatek-1]=='(' and RNA_kropkowo_nawiasowa[koniec]=='(')):
+            petla.append((poczatek, koniec-1))
+
             continue
+        if ((RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]==')') or (RNA_kropkowo_nawiasowa[poczatek-1]=='(' and RNA_kropkowo_nawiasowa[koniec]=='(')):
+            petla.append((poczatek, koniec-1))
+
+    print("pojedynczy lancuch", pojedynczyLancuch)
+    print("petla", petla)
     
 
 
@@ -54,8 +65,10 @@ if __name__ == "__main__":
  
      #elementyStruktury('..((((...(((...)))..)))(((....(((...)))...)))...')
      #elementyStruktury('..(((...)))..')
-     elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))')
+     #elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))..')
      #elementyStruktury('..((((((...)))(((...)))(((...)))))).')
+     elementyStruktury('..(((...(((.....)))...)))...')
+    # elementyStruktury('..(((...(((.....))))))...')
     # elementyStruktury('(((((((((...((((((.........))))))........((((((.......))))))..)))))))))')
     
 
