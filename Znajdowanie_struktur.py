@@ -19,11 +19,13 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
             para2 = i
             mapaWiazan[para1] = para2
             mapaWiazan[para2] = para1
+          
 
     #print(mapaWiazan)
     spinka = re.compile('[(][.]{1,500}[)]')
     kropka = re.compile('[.]{1,1000}')
 
+    print (mapaWiazan)
 
     spinkaIterator = spinka.finditer(RNA_kropkowo_nawiasowa)
     for sp in spinkaIterator:
@@ -36,25 +38,57 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
         kropki.append(kr.span())
     for kr in kropki:
         print("kropki", kr)
+
     for kr in kropki:
         poczatek = kr[0] #pierwszy z pary kropek
         koniec = kr[1] #drugi z pary kropek
        
-        for sp in spinkiDoWlosow:
-            print("spinka", sp[0], sp[1])
+        #for sp in spinkiDoWlosow:
+         #   print("spinka", sp[0], sp[1])
        
         if poczatek == 0 or koniec>len(RNA_kropkowo_nawiasowa)-1:
             pojedynczyLancuch.append((poczatek,koniec-1))
             continue
-        if ((RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]==')') or (RNA_kropkowo_nawiasowa[poczatek-1]=='(' and RNA_kropkowo_nawiasowa[koniec]=='(')):
-            petla.append((poczatek, koniec-1))
+        if (RNA_kropkowo_nawiasowa[poczatek-1]=='(' and RNA_kropkowo_nawiasowa[koniec]=='(') :
+            if mapaWiazan.get(poczatek-1,  'None') -  mapaWiazan.get(koniec,  'None') == 1:
+                wybrzuszenie.append((poczatek, koniec-1))
+                print("wybrzuszenie")
+            else:
+                print("petla")
+                petla.append((poczatek, koniec-1))
+           
+            #print("poczatek-1", poczatek-1, mapaWiazan.get(poczatek-1,  'None'))
+            #print("koniec", koniec, mapaWiazan.get(koniec,  'None'))
+            #petla.append((poczatek, koniec-1))
+            continue
+        if (RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]==')'):
+            if mapaWiazan.get(poczatek-1,  'None') -  mapaWiazan.get(koniec,  'None') == 1:
+                wybrzuszenie.append((poczatek, koniec-1))
+                print("wybrzuszenie")
+            else:
+                print("petla")
+                petla.append((poczatek, koniec-1))
+            '''
+            if mapaWiazan.get(poczatek-1,  'None') -  mapaWiazan.get(koniec,  'None') == 1:
+                wybrzuszenie.append((poczatek, koniec-1))
+                print("wybrzuszenie")
+            else:
+                print("petla")
+                petla.append((poczatek, koniec-1))
+            '''
+           
+          
+            #petla.append((poczatek, koniec-1))
 
             continue
+        '''
         if ((RNA_kropkowo_nawiasowa[poczatek-1]==')' and RNA_kropkowo_nawiasowa[koniec]==')') or (RNA_kropkowo_nawiasowa[poczatek-1]=='(' and RNA_kropkowo_nawiasowa[koniec]=='(')):
             petla.append((poczatek, koniec-1))
+        '''
 
     print("pojedynczy lancuch", pojedynczyLancuch)
     print("petla", petla)
+    print("wybrzuszenie", wybrzuszenie)
     
 
 
@@ -67,7 +101,10 @@ if __name__ == "__main__":
      #elementyStruktury('..(((...)))..')
      #elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))..')
      #elementyStruktury('..((((((...)))(((...)))(((...)))))).')
-     elementyStruktury('..(((...(((.....)))...)))...')
+     elementyStruktury('..((..(((..((..))..)))..))..')
+     print("druga")
+     elementyStruktury('..((..(((((..))..)))..))..')
+     #elementyStruktury('..((..(((..((..)))))..))..')
     # elementyStruktury('..(((...(((.....))))))...')
     # elementyStruktury('(((((((((...((((((.........))))))........((((((.......))))))..)))))))))')
     
@@ -77,3 +114,365 @@ if __name__ == "__main__":
 #'((((((....)))....(((....))))))...'
 #'..((((((...))).(((...))).(((...))))))'
 #'..((((...(((...)))..)))(((....(((...)))...)))...'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
