@@ -22,13 +22,12 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
             mapaWiazan[para1] = para2
             mapaWiazan[para2] = para1
           
-
-    print(mapaWiazan)
+    #print(mapaWiazan)
 
     stos.clear()
    
     kropka = re.compile('[.]{1,1000}')
-    st = re.compile('[(]{1,1000}')
+    st = re.compile('[()]{1,1000}')
 
     
     stosIterator = st.finditer(RNA_kropkowo_nawiasowa)
@@ -36,11 +35,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     for s in stosIterator:
         stos.append(s.span())
 
-    #for s in stos:
-        #print(s[0], s[1])
-
    
-    
 
     kropkiIterator = kropka.finditer(RNA_kropkowo_nawiasowa)
     for kr in kropkiIterator:
@@ -101,6 +96,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
 
     skrzyzowanie.sort()
     
+    '''
     print(RNA_kropkowo_nawiasowa)
     print("pojedynczy lancuch", pojedynczyLancuch)
     print("spinkiDoWlosow", spinkiDoWlosow)
@@ -108,28 +104,56 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     print("wybrzuszenie", wybrzuszenie)
     print("skrzyzowanie", skrzyzowanie)
     print("stos", stos)
+    '''
 
     #for x in RNA_kropkowo_nawiasowa:
         
+    for p in pojedynczyLancuch:
+        ciag.append(p)
+    for s in spinkiDoWlosow:
+        ciag.append(s)
+    for p in petla:
+        ciag.append(p)
+    for w in wybrzuszenie:
+        ciag.append(w)
+    for s in skrzyzowanie:
+        ciag.append(s)
+    for st in stos:
+        ciag.append((st[0], st[1]-1))
+   
 
-    ciag.append(pojedynczyLancuch)
-    ciag.append(spinkiDoWlosow)
-    ciag.append(petla)
-    ciag.append(wybrzuszenie)
-    ciag.append(skrzyzowanie)
-    #ciag.append(stos)
+  
     ciag.sort()
-    print("ciag", ciag)
+    #print("ciag", ciag)
 
     stri = ""
 
+    for x in ciag:
+        if x in pojedynczyLancuch:
+            #print(len(x))
+            stri += "l"*(x[1]-x[0]+1)
+            continue
+        if x in spinkiDoWlosow:
+            stri += "s"*(x[1]-x[0]+1)
+            continue
+        if x in petla:
+            stri += "p"*(x[1]-x[0]+1)
+            continue
+        if x in wybrzuszenie:
+            stri += "w"*(x[1]-x[0]+1)
+            continue
+        if x in skrzyzowanie:
+            stri += "x"*(x[1]-x[0]+1)
+            continue
+        else:
+            stri += "d"*(x[1]-x[0]+1)
+            
+
+    print(RNA_kropkowo_nawiasowa)
+    print( stri)
+        
+
     
-    
-    
-
-
-
-
 
 if __name__ == "__main__":
  
@@ -138,12 +162,11 @@ if __name__ == "__main__":
      #elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))..')
      #elementyStruktury('..((((((...)))(((...)))(((...)))))).')
      elementyStruktury('..((..(((..((..))..)))..))..')
-     print("druga")
-     #elementyStruktury('..((..(((((..))..)))..))..')
-     #elementyStruktury('..((..(((..((..)))))..))..')
+     elementyStruktury('..((..(((((..))..)))..))..')
+     elementyStruktury('..((..(((..((..)))))..))..')
      elementyStruktury('(((..(((...)))...(((...)))..)))')
-    # elementyStruktury('..(((...(((.....))))))...')
-    # elementyStruktury('(((((((((...((((((.........))))))........((((((.......))))))..)))))))))')
+     elementyStruktury('..(((...(((.....))))))...')
+    
     
 
      
