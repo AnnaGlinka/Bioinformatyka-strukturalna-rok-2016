@@ -21,10 +21,19 @@ def utworzDrzewo(elem):
         if e != 'd':
             elementy += e
 
+    print(elementy)
+
     slownikDoDrzewa = {-1: ['korzen', 1]}
     drzewo = {-1: set([])}
     for ind, e in enumerate(elementy):
         #print("e=", e)
+        if e == 'x':
+            print('x na indeksie ', ind)
+            for ind, e in enumerate(elementy):
+                print("costam", ind, e)
+
+
+
         slownikDoDrzewa.update({ind: [e, 1]})
         
         
@@ -42,8 +51,6 @@ def utworzDrzewo(elem):
 
 
     return drzewo, slownikDoDrzewa
-
-
 
 def odtworzElementy(seq, slownik):
     print("seq", seq)
@@ -79,8 +86,8 @@ str2 = 'dxdsdxdsdxd'
 print(str2)
 
 d2 = (utworzDrzewo(str2)[0])
-slownik2 = (utworzDrzewo(str2)[1])
-seq2 = dfs(d2, -1)
+#slownik2 = (utworzDrzewo(str2)[1])
+#seq2 = dfs(d2, -1)
 
-print(seq2)
-odtworzElementy(seq2, slownik2)
+#print(seq2)
+#odtworzElementy(seq2, slownik2)
