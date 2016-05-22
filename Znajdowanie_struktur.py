@@ -144,30 +144,41 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     #print("ciag", ciag)
 
     stri = ""
+    stri2 = ""
 
     for x in ciag:
         if x in pojedynczyLancuch:
             #print(len(x))
             stri += "l"*(x[1]-x[0]+1)
+            stri2 += "l"
             continue
         if x in spinkiDoWlosow:
             stri += "s"*(x[1]-x[0]+1)
+            stri2 += "s"
             continue
         if x in petla:
             stri += "p"*(x[1]-x[0]+1)
+            stri2 += "p"
             continue
         if x in wybrzuszenie:
             stri += "w"*(x[1]-x[0]+1)
+            stri2 += "w"
             continue
         if x in skrzyzowanie:
             stri += "x"*(x[1]-x[0]+1)
+            stri2 += "x"
             continue
         else:
             stri += "d"*(x[1]-x[0]+1)
+            stri2 += "d"
             
 
     print(RNA_krn)
     print( stri)
+    print(stri2)
+    print(mapaWiazan)
+
+    return stri2, mapaWiazan
         
 
     
@@ -177,7 +188,7 @@ if __name__ == "__main__":
      #elementyStruktury('((([[..)))..]]')
      #elementyStruktury('......(((.{[[....[[)))...].].}.]]..')
      #elementyStruktury('.((((((..(((.....[....)))..((((.......))))......(((((..]....))))))))))).')
-     elementyStruktury('.((((((..(((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
+     #elementyStruktury('.((((((..(((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
      #elementyStruktury('.((((((..((((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
      #elementyStruktury('.((((((..(((....(((....)))...)))..((((.......)))))......(((((..]....))))))))))).')
      #elementyStruktury('..((((...(((...)))..)))(((....(((...)))...)))...')
@@ -187,14 +198,17 @@ if __name__ == "__main__":
      #elementyStruktury('..((..(((..((..))..)))..))..')
      #elementyStruktury('..((..(((((..))..)))..))..')
      #elementyStruktury('..((..(((..((..)))))..))..')
-     #elementyStruktury('(((..(((...)))...(((...)))..)))')
+     elementyStruktury('(((..(((...)))...(((...)))..)))')
+     
      #elementyStruktury('..(((...(((.....))))))...')
+     #elementyStruktury('((..((..((..))..((..))..))..((..))..))')
 
      #PDB_00547
-     #elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
-    
+     #c = elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
+     #print(c)
     
 
+    
      
 
 #'((((((....)))....(((....))))))...'
