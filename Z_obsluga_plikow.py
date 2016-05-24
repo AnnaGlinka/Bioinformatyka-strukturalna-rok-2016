@@ -1,6 +1,5 @@
 ﻿import re
 
-
 def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
     RNA_krn = ""
     for x in RNA_kropkowo_nawiasowa:
@@ -8,7 +7,6 @@ def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
             RNA_krn += x
         else:
             RNA_krn += '.'
-          
     mapaWiazan = {}
     stos = []
     spinkiDoWlosow = []
@@ -61,7 +59,6 @@ def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
         
             skrzyzowanie.append((poczatek, koniec-1))
             continue
-
         if (RNA_krn[poczatek-1]=='(' and RNA_krn[koniec]==')') :
            spinkiDoWlosow.append((poczatek, koniec-1))
            continue
@@ -102,8 +99,6 @@ def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
     for st in stos:
         ciag.append((st[0], st[1]-1))
    
-
-  
     ciag.sort()
 
     stri = ""
@@ -170,15 +165,11 @@ def metrykaHausdorffa(S1, S2):
                     para2 = i
                     mapaS2[para1] = para2
                     
-    print("mapaS1" , mapaS1)
-    print("mapaS2", mapaS2)
-  
     wie = len(mapaS1) + 1
     kol = len(mapaS2) + 1
-    print("kol:", kol, "wie:", wie)
-
+  
     Matrix = [[0 for i in range(kol)] for i in range(wie)]
-    print(Matrix)
+
     i = 0
     j = 0   
     for keys,values in mapaS1.items():
@@ -187,20 +178,13 @@ def metrykaHausdorffa(S1, S2):
             j = j + 1
         i = i + 1
         j = 0
-    print("po wypelnieniu")
-    for i in range(0, wie):
-        for j in range(0, kol):
-            print( Matrix[i][j], end=" ")
-        print("")
-
-
+   
     for i in range(0, wie-1):
         minRz = Matrix[i][0]
         for j in range(0, kol-1):
             if Matrix[i][j] < minRz:
                 minRz = Matrix[i][j]
             Matrix[i][kol-1] = minRz 
-     
     
     for j in range(0, kol-1):
         minKol = Matrix[0][j]
@@ -208,33 +192,47 @@ def metrykaHausdorffa(S1, S2):
             if Matrix[i][j] <  minKol:
                  minKol = Matrix[i][j]
             Matrix[wie-1][j] = minKol
-          
-
-    print("po sumowaniu")
-    for i in range(0, wie):
-        for j in range(0, kol):
-            print(Matrix[i][j], end=" ")
-        print("")
-
     MaxPoRzedach =  Matrix[0][kol-1]
     for i in range(1, wie-1):
         if Matrix[i][kol-1] > MaxPoRzedach:
             MaxPoRzedach = Matrix[i][kol-1]
-    print("MaxPoRzedach ", MaxPoRzedach)
-
+  
     MaxPoKolum = Matrix[wie-1][0];
     for j in range(1, kol-1):
         if Matrix[wie-1][j] > MaxPoKolum :
             MaxPoKolum  =  Matrix[wie-1][j];
-    print("MaxPoKolum ",   MaxPoKolum )
-
     return max(MaxPoRzedach,MaxPoKolum);
     
 #-----------------------------------------------------------------------------------------------------
-def porownywacz(str1, nr1, str2, nr2):
-    print("porownuje", nr1, str1 )
-    print("z ", nr2, str2)
+def metrykaGory(S1, S2):
+    vS1 = []
+    vS2 = []
+    S1c = 0
+    S2c = 0
+
+    for j in S1:
+            if j == '(': 
+                S1c+=1
+                vS1.append(S1c)
+            elif j == ')':
+                S1c-=1
+                vS1.append(S1c)
+            else:
+                vS1.append(S1c)
+
+    for j in S2:
+            if j == '(': 
+                S2c+=1
+                vS2.append(S2c)
+            elif j == ')':
+                S2c-=1
+                vS2.append(S2c)
+            else:
+                vS2.append(S2c)
+
+    return abs(sum(vS1)-sum(vS2))
 #-----------------------------------------------------------------------------------------------------
+
 def utworzZbiorZPliku(sciezka):
     f = open(sciezka, "r")
     print(f.name)
@@ -251,34 +249,48 @@ def utworzZbiorZPliku(sciezka):
 def porownajStruktury(zbior, wyjscie):
     #print(zbior)
     mapy = {}
+
     for ind, z in enumerate(zbior):
         #mapy.update({ind: elementyStruktury(z, ind)[1]})
        
         elemStruktWyjscie = elementyStruktury(z, ind, wyjscie)
+       
         if elemStruktWyjscie: #jesli jest wyjscie
-           print(elemStruktWyjscie[1])
+           #print(elemStruktWyjscie[1])
+           mapy.update({ind: elemStruktWyjscie[1]})
+        else:
+            mapy.update({ind: None})
+
+          
+    for ind, z in enumerate(zbior):
         for ind2, z2 in enumerate(zbior):
-            if(ind == ind2):
+            if ind == ind2:
                 continue
-            #print(ind+1, z)
-            #print(ind2+1, z2)
-            #porownywacz(z, ind+1, z2, ind2+1)
-           
+            #print(mapy.get(ind))
+            if mapy.get(ind) == None or mapy.get(ind2) == None:
+                #print("None")
+                continue
 
+            print("odleglosc struktury", ind+1, "od struktury", ind2+1, "wynosi")
+            print("metryka Hausdorffa:", metrykaHausdorffa(z, z2))
+            print("metryka gory:", metrykaGory(z, z2))
 
+            wyj = ' '.join(['\nodleglosc struktury',  str(ind+1), 'od struktury', str(ind2+1), 'wynosi\n', 'metryka Hausdorffa:', str(metrykaHausdorffa(z, z2)), '\n', 'metryka gory:', str(metrykaGory(z, z2)), '\n'])
+            wyjscie.write(wyj)
+            
 if __name__ == "__main__":
     
     #wejscie
     sciezka1 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa.txt"
     sciezka2 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa2.txt"
+    sciezka3 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa3.txt"
     #wyjscie
+  
     wyjscie = open(r"E:\Bioinfor_projekt\Raport.txt", "w")
+    
 
-
-    zbiorStr = utworzZbiorZPliku(sciezka2)
-
+    zbiorStr = utworzZbiorZPliku(sciezka3)
     porownajStruktury(zbiorStr, wyjscie)
-
     wyjscie.close()
 
 
