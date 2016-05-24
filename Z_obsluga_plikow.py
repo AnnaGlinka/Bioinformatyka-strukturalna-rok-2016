@@ -124,13 +124,13 @@ def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
         if x in skrzyzowanie:
             stri += "x"*(x[1]-x[0]+1)
             if ciag[ind+1][0] < mapaWiazan.get(ciag[ind+1][0]) and ciag[ind-1][1] > mapaWiazan.get( ciag[ind-1][1]):
-                stri2 +="]x["
+                stri2 +="]["
                 continue
             if ciag[ind-1][1] > mapaWiazan.get( ciag[ind-1][1]) and ciag[ind-1][1] > mapaWiazan.get( ciag[ind-1][1]):
-                stri2 +="]x"
+                stri2 +="]"
                 continue
             if ciag[ind-1][1] < mapaWiazan.get( ciag[ind-1][1]) and ciag[ind-1][1] < mapaWiazan.get( ciag[ind-1][1]):
-                stri2 +="x["
+                stri2 +="["
                 continue
             continue
         else:
@@ -140,10 +140,75 @@ def elementyStruktury(RNA_kropkowo_nawiasowa, indeks, wyjscie):
     print("\nstruktura nr", indeks+1, ":")
     print(RNA_krn)
     print( stri, "\n")
-    wyj = ' '.join(['\nstruktura nr',  str(indeks+1), ':\n', str(RNA_krn), '\n', str(stri), '\n'])
+    print( stri2, "\n")
+    wyj = ' '.join(['\nstruktura nr',  str(indeks+1), ':\n', str(RNA_krn), '\n', str(stri), '\n', str(stri2), '\n'])
     wyjscie.write(wyj)
     
     return stri2, mapaWiazan, stri
+#-----------------------------------------------------------------------------------------------------
+def utworzDrzewo(elementy):
+    print(elementy)
+    ind = 0
+    wyjscie = ""
+    licznikNawiasow = 0
+    maxLicznikNawiasow = 0
+    licznikX = 1
+    while ind < len(elementy):
+        #print(elementy[ind], licznikNawiasow)
+
+        if(elementy[ind] == '['):
+            wyjscie += 'x'
+            #wyjscie += str(licznikX)
+            licznikX+=1
+            
+        else:
+            wyjscie +=elementy[ind]
+
+        if elementy[ind] == '[':
+            licznikNawiasow +=1
+       
+        if elementy[ind] == 's':
+            
+            #wyjscie += 's'
+            while elementy[ind] != ']':
+                #print("------", elementy[ind], licznikNawiasow)
+                if ind >= len(elementy)-1:
+                      #print("wyj", wyjscie)
+                      return wyjscie
+                #print("w while z ]", elementy[ind])
+                if elementy[ind] == '[':
+                   licznikNawiasow +=1
+                if elementy[ind] == ']':
+                   licznikNawiasow -=1
+                ind += 1
+            #print("po while z ]")   
+      
+
+        if elementy[ind] == ']':
+            licznikNawiasow -=1
+            while elementy[ind] != '[':
+                #print("<<<<", elementy[ind], licznikNawiasow)
+                if ind >= len(elementy)-1:
+                      #print("wyj", wyjscie)
+                      return wyjscie
+                #print("w while z [...", elementy[ind])
+                ind += 1
+                if elementy[ind] == '[':
+                   licznikNawiasow +=1
+                if elementy[ind] == ']':
+                   licznikNawiasow -=1
+               
+                
+            #print("po while z [...")   
+
+        #print(elementy[ind], ind)
+        
+        #wyjscie += elementy[ind]
+        ind +=1
+
+
+        #print(wyjscie)
+    return wyjscie
 #-----------------------------------------------------------------------------------------------------
 def metrykaHausdorffa(S1, S2):
     mapaS1 = {}
@@ -284,12 +349,13 @@ if __name__ == "__main__":
     sciezka1 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa.txt"
     sciezka2 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa2.txt"
     sciezka3 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa3.txt"
+    sciezka4 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa4.txt"
     #wyjscie
   
     wyjscie = open(r"E:\Bioinfor_projekt\Raport.txt", "w")
     
 
-    zbiorStr = utworzZbiorZPliku(sciezka3)
+    zbiorStr = utworzZbiorZPliku(sciezka4)
     porownajStruktury(zbiorStr, wyjscie)
     wyjscie.close()
 
