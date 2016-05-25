@@ -319,9 +319,15 @@ def porownajStruktury(zbior, wyjscie):
         #mapy.update({ind: elementyStruktury(z, ind)[1]})
        
         elemStruktWyjscie = elementyStruktury(z, ind, wyjscie)
+        
        
         if elemStruktWyjscie: #jesli jest wyjscie
-           #print(elemStruktWyjscie[1])
+           #print( elemStruktWyjscie[0])
+           dfs = (utworzDrzewo(elemStruktWyjscie[0]))
+           print(dfs)
+           wyj = ' '.join(['przeszukiwanie dfs:',  str(dfs), '\n'])
+           wyjscie.write(wyj)
+
            mapy.update({ind: elemStruktWyjscie[1]})
         else:
             mapy.update({ind: None})
