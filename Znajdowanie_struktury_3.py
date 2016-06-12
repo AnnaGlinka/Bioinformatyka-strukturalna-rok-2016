@@ -20,6 +20,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     ciag = []
     spinkaBezKr = []
     wybrzuszenieOdpowiednikZlewej = []
+    skrzyzowanieBezKropek = []
     for i, j in enumerate(RNA_krn):
             mapaWiazan[i] = None
     for i, j in enumerate(RNA_krn):
@@ -47,15 +48,34 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     kropka = re.compile('[.]{1,1000}')
     st = re.compile('[()]{1,1000}')
     spinka_bez_kropek = re.compile('[(][)]')
+    skrzyzowanie_bez_kropek = re.compile('[)][(]')
+
+    skrzyzowanie_bez_kropekIterator = skrzyzowanie_bez_kropek.finditer(RNA_krn)
+    for skbk in skrzyzowanie_bez_kropekIterator:
+        skrzyzowanieBezKropek.append((skbk.span()))
+        x = skbk.span()
+        #print(skbk.span())
+        #print("mapa",  mapaWiazan.get(x[0],  'None'), mapaWiazan.get(x[1]-1,  'None'))
+        
+
+    l = len(skrzyzowanieBezKropek)
+
+   
+    if l > 0:
+        #print( skrzyzowanieBezKropek[0], mapaWiazan.get(skrzyzowanieBezKropek[0][0]))
+        #print( skrzyzowanieBezKropek[l-1], mapaWiazan.get(skrzyzowanieBezKropek[l-1][1]-1))
+        skrzyzowanieBezKropek.append((mapaWiazan.get(skrzyzowanieBezKropek[0][0]), mapaWiazan.get(skrzyzowanieBezKropek[0][0])))
+        skrzyzowanieBezKropek.append((mapaWiazan.get(skrzyzowanieBezKropek[l-1][1]-1), mapaWiazan.get(skrzyzowanieBezKropek[l-1][1]-1)))
+        
+       
+    skrzyzowanieBezKropek.sort()
 
     spinka_bez_kropekIterator = spinka_bez_kropek.finditer(RNA_krn);
-
-    for spk in spinka_bez_kropekIterator:
-        spinkaBezKr.append(spk.span());
+    for sbk in spinka_bez_kropekIterator:
+        spinkaBezKr.append(sbk.span());
 
     
     stosIterator = st.finditer(RNA_krn)
-    
     for s in stosIterator:
         stos.append(s.span())
         #print(stos)
@@ -134,6 +154,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     '''
     # r - oznaczenie jak dla spinki do wlosow, ale bez niesparowanych nukleotydow ((()))
     # z - odpowiednik do wybrzuszenia pojawiajacego siê po prawej stronie
+    # o - skrzyzowanie bez niesparowanych nukleotydow pomiedzy odgalezieniami
         
     for p in pojedynczyLancuch:
         ciag.append(p)
@@ -151,6 +172,8 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
         ciag.append(sbk)
     for z in wybrzuszenieOdpowiednikZlewej:
         ciag.append(z)
+    for skbk in skrzyzowanieBezKropek:
+        ciag.append(skbk)
    
 
   
@@ -160,7 +183,17 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     stri2 = ""
 
     for ind, x in enumerate(ciag):
-        
+        if x in skrzyzowanieBezKropek:
+           
+            if mapaWiazan.get(x[0]) < x[0] and mapaWiazan.get(x[1]) > x[1]:
+                 stri2 += "]["
+            elif mapaWiazan.get(x[0]) > x[0]:
+                stri2 += "["
+            else:
+                stri2+= "]"
+
+            #stri2 += "o"
+            continue
         if x in spinkaBezKr:
             stri2 += "r"
             continue
@@ -212,7 +245,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     print("stri: ", stri)
     print("stri2: ",stri2)
     
-    #print(mapaWiazan)
+    print("----------------------------------------------")
 
     #-----------------------
     
@@ -224,42 +257,37 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
 
 if __name__ == "__main__":
 
-     #elementyStruktury('((([[..)))..]]')
+     elementyStruktury('((([[..)))..]]')
      elementyStruktury('((..(())..))')
      elementyStruktury('(((((..(())..)))..))')
-     #elementyStruktury('......(((.{[[....[[)))...].].}.]]..')
-     #elementyStruktury('.((((((..(((.....[....)))..((((.......))))......(((((..]....))))))))))).')
-     #elementyStruktury('.((((((..(((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
-     #elementyStruktury('.((((((..((((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
-     #elementyStruktury('.((((((..(((....(((....)))...)))..((((.......)))))......(((((..]....))))))))))).')
+     elementyStruktury('......(((.{[[....[[)))...].].}.]]..')
+     elementyStruktury('.((((((..(((.....[....)))..((((.......))))......(((((..]....))))))))))).')
+     elementyStruktury('.((((((..(((....(((....)))...)))..((((.......))))......(((((..]....))))))))))).')
      elementyStruktury('..((((...(((..)))..)))(((....(((...)))...)))...')
-     #elementyStruktury('..(((...)))..')
-     #elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))..')
-     elementyStruktury('..((((((...)))(((...)))(((...)))))).')
+     elementyStruktury('..((((..((..))..))((..((..))..))))...')
+     elementyStruktury('..(((((((((...)))....)))...)))')
+     elementyStruktury('....((((((..((((........)))).(((((.......)))))).....(((((.......))))))))))..')
+     elementyStruktury('..((((((...)))(((...)))(((...)))(((...)))(((...)))(((...)))(((...)))))).')
+     elementyStruktury('..((((((...)))(((...)))..(((...)))(((...)))(((...)))(((...)))(((...)))))).')
+     elementyStruktury('..((((((...)))(((..((..(())..))..((..(())..))..)))..(((...)))(((...)))(((...)))(((...)))(((...)))))).')
      elementyStruktury('..(((((()))(((...)))(((...)))))).')
-     #elementyStruktury('..((..(((..((..))..)))..))..')
-     #elementyStruktury('..((..(((((..))..)))..))..')
-     #elementyStruktury('..((..(((..((..)))))..))..')
+     elementyStruktury('..((..(((..((..))..)))..))..')
+     elementyStruktury('..((..{(((((..))..))))..))..')
+     elementyStruktury('..((..(((..((..)))))..))..')
      elementyStruktury('(((..(((...)))...(((...)))..)))')
      #drzewo 7
      elementyStruktury('((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))')
      #drzewo 7 z wybrzuszeniem
      elementyStruktury('((..((((..((..((((..((..((..))..((..((..((..))..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))')  
-     
-     #elementyStruktury('..(((...(((.....))))))...')
-     #elementyStruktury('((..((..((..))..((..))..))..((..))..))')
-
-     #PDB_00547
-     #c = elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
-     #print(c)
-    
+     elementyStruktury('..(((...(((.....))))))...')
+     elementyStruktury('((..((..((..))..((..))..))..((..))..))')
+     elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
+   
 
     
      
 
-#'((((((....)))....(((....))))))...'
-#'..((((((...))).(((...))).(((...))))))'
-#'..((((...(((...)))..)))(((....(((...)))...)))...'
+
 
 
 
