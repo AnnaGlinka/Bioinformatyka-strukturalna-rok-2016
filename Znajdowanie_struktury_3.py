@@ -1,4 +1,4 @@
-import re
+ï»¿import re
 
 def elementyStruktury(RNA_kropkowo_nawiasowa):
 
@@ -117,7 +117,7 @@ def elementyStruktury(RNA_kropkowo_nawiasowa):
     
    
     # r - oznaczenie jak dla spinki do wlosow, ale bez niesparowanych nukleotydow ((()))
-    # z - odpowiednik do wybrzuszenia pojawiajacego siê po prawej stronie
+    # z - odpowiednik do wybrzuszenia pojawiajacego siï¿½ po prawej stronie
     # o - skrzyzowanie bez niesparowanych nukleotydow pomiedzy odgalezieniami
         
     for p in pojedynczyLancuch:
@@ -234,11 +234,13 @@ if __name__ == "__main__":
      #drzewo 7
      elementyStruktury('((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))')
      #drzewo 7 z wybrzuszeniem
-     elementyStruktury('((..((((..((..((((..((..((..))..((..((..((..))..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))')  
-     elementyStruktury('..(((...(((.....))))))...')
-     elementyStruktury('((..((..((..))..((..))..))..((..))..))')
-     elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
-   
+     elementyStruktury('((((((((..((((..((..((((..((..(((((.....)))))..(((((..((..((((....))))..))..)))))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))))))))')  
+     #drzewo 8 z wybrzuszeniem
+     elementyStruktury('((..((((..((..((((..((..((..))..((..((..((..))..((..((..((..((..))..((..))..))..))..))..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..))')  
+    
+     #elementyStruktury('..(((...(((.....))))))...')
+     #elementyStruktury('((..((..((..))..((..))..))..((..))..))')
+     #elementyStruktury('..((((..(((((.(((((((((....)))))))))..)))))....((((((((....((((.(((((....))))).)))).)))))))).))))')
 
     
      
