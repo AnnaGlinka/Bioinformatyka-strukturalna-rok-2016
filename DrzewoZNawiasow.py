@@ -1,29 +1,4 @@
 
-def DoKoncaGalezi(elementy):
-    print("wejscie: ", elementy)
-    ind = 0
-    wyjscie = ""
-    #-------------------------------------------------------------
-    while ind < len(elementy):
-        
-        #print("w", elementy[ind])
-        wyjscie += elementy[ind]
-        if(elementy[ind] == 's' or elementy[ind] == 'r'):
-            #wyjscie += elementy[ind]
-            while elementy[ind] != ']' and ind < len(elementy)-1:
-                #print("w while", elementy[ind])
-               
-                ind +=1
-            wyjscie+=']'
-       
-        ind +=1
-
-        #---------------------------------------------------------------------------------
-
-        #print(wyjscie)
-    return wyjscie
-      
-
 def ZbudujDrzewo(elem):
     print("wejscie: ", elem)
     i = 0
@@ -33,6 +8,10 @@ def ZbudujDrzewo(elem):
     licznikNawiasow = 0 #zlicza ile razy stos nawiasow stal sie pusty
     galaz = ""
     #-------------------------------------------------------------
+    print(elem[0], elem[-1])
+    if (elem[0] == 'l' or elem[-1] == 'l'):
+        wyjscie.append(1)
+
     while i < len(elem):
         
         if (elem[i] == 'p' or elem[i] == 'w' or elem[i] == 'z'):
@@ -57,6 +36,7 @@ def ZbudujDrzewo(elem):
                     galaz = ""
                 i+=1
 
+        print("stosGalezi", stosGalezi)
 
 
         if len(stosGalezi):
@@ -65,7 +45,7 @@ def ZbudujDrzewo(elem):
 
         while stosGalezi:
             e = stosGalezi.pop()
-            #print("e=========================", e)
+            print("e=========================", e)
             ind = 0
             licznikNawiasow = 0
             licznikStosu2 = 0
@@ -115,8 +95,24 @@ str2 = 'ppspp'
 str3 = 'l[psp][ppspp]'
 str4 = 'pz[pzp[s][ppspp]pwp][s][pp[psp][psp]pp][pp[s][s]pp]wp'
 str5 = 'pz[pzp[s][p[s][pp[s][s]pp]p]pwp][s][pp[psp][psp]pp][pp[s][s]pp][pp[s][s]pp]wp'
-print("wyjscie: ", ZbudujDrzewo(str1))
-print("wyjscie: ", ZbudujDrzewo(str2))
-print("wyjscie: ", ZbudujDrzewo(str3))
-print("wyjscie: ", ZbudujDrzewo(str4))
-print("wyjscie: ", ZbudujDrzewo(str5))
+str6 = 'pz[pzp[s][ppspp]pwp][zsw][pp[psp][psp]pp][pp[s][s]pp]wpl'
+str7 = 'lpz[pzp[s][p[s][pp[s][s]pp]p]pwp][s][pp[psp][psp]pp][pp[s][s]pp][pp[s][s]pp]wpl'
+#PDB_00547 
+str8 = 'l[psp][ppspp]'
+#PDB_00142
+str9 = 'psp'   
+# CRW_00552
+str10 = 'l[zpzswpw][psp]l'
+#print("wyjscie: ", ZbudujDrzewo(str1))
+#print("wyjscie: ", ZbudujDrzewo(str2))
+#print("wyjscie: ", ZbudujDrzewo(str3))
+#print("wyjscie: ", ZbudujDrzewo(str4))
+#print("wyjscie: ", ZbudujDrzewo(str5))
+#print("wyjscie: ", ZbudujDrzewo(str6))
+print("wyjscie: ", ZbudujDrzewo(str7))
+print("wyjscie: ", ZbudujDrzewo(str8))
+print("wyjscie: ", ZbudujDrzewo(str9))
+print("wyjscie: ", ZbudujDrzewo(str10))
+
+
+
