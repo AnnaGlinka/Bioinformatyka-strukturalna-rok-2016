@@ -100,8 +100,8 @@ def ZbudujDrzewo(elem):
             #print("licznik stosu", licznikStosu)
             #print("licznik stosu2", licznikStosu2)
             if licznikStosu2 != 0:
-                wyjscie.append(licznikStosu - licznikStosu2)
-                #print("dodaje ", licznikStosu - licznikStosu2)
+                wyjscie.append(licznikStosu2)
+                #print("dodaje ", licznikStosu2)
             
 
         i +=1
@@ -114,9 +114,9 @@ str1 = 'ppppp[pp[s][ppspp]pp][s][pp[psp][psp]pp][pp[s][s]pp]ppppp'
 str2 = 'ppspp'
 str3 = 'l[psp][ppspp]'
 str4 = 'pz[pzp[s][ppspp]pwp][s][pp[psp][psp]pp][pp[s][s]pp]wp'
-wyj = ""
+str5 = 'pz[pzp[s][p[s][pp[s][s]pp]p]pwp][s][pp[psp][psp]pp][pp[s][s]pp][pp[s][s]pp]wp'
 print("wyjscie: ", ZbudujDrzewo(str1))
 print("wyjscie: ", ZbudujDrzewo(str2))
 print("wyjscie: ", ZbudujDrzewo(str3))
 print("wyjscie: ", ZbudujDrzewo(str4))
-#print(d)
+print("wyjscie: ", ZbudujDrzewo(str5))
