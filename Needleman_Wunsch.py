@@ -5,7 +5,7 @@ punktacja = {'dopasowanie':1, 'niedopasowanie':-1, 'przerwa':-1}
 def sprawdzDopasowanie(x, y):
     if x == y:
         return punktacja['dopasowanie']
-    elif x == '-' or y == '-':
+    elif x == "-" or y == "-":
         return punktacja['przerwa']
     else:
         return punktacja['niedopasowanie']
