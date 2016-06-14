@@ -1,3 +1,5 @@
+﻿#Anna Glinka
+#Bioinformatyka sturkturalna
 
 import numpy as np
 punktacja = {'dopasowanie':1, 'niedopasowanie':-1, 'przerwa':-1}
