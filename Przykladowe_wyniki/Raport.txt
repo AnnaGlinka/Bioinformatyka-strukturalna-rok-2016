@@ -1,0 +1,882 @@
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+przeszukiwanie dfs: 10 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+przeszukiwanie dfs: 10 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+przeszukiwanie dfs: 13000 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+przeszukiwanie dfs: 110 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+przeszukiwanie dfs: 10 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+przeszukiwanie dfs: 10 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+przeszukiwanie dfs: 111411200112101001121100 
+-------Porownywanie sekwencji--------------------------
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 1 od struktury 2 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 1---0 
+sekwencja 2: 13000 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 1 od struktury 3 wynosi
+ metryka Hausdorffa: 65 
+ metryka gory: 530 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: -10 
+sekwencja 2: 110 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 1 od struktury 6 wynosi
+ metryka Hausdorffa: 5 
+ metryka gory: 15 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 1 od struktury 7 wynosi
+ metryka Hausdorffa: 0 
+ metryka gory: 0 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 1 od struktury 8 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: ---------------------1-0 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 1 od struktury 11 wynosi
+ metryka Hausdorffa: 172 
+ metryka gory: 1875 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 2 od struktury 1 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 1---0 
+sekwencja 2: 13000 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 2 od struktury 3 wynosi
+ metryka Hausdorffa: 53 
+ metryka gory: 512 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: -10 
+sekwencja 2: 110 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 2 od struktury 6 wynosi
+ metryka Hausdorffa: 10 
+ metryka gory: 3 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 2 od struktury 7 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 2 od struktury 8 wynosi
+ metryka Hausdorffa: 0 
+ metryka gory: 0 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: ---------------------1-0 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 2 od struktury 11 wynosi
+ metryka Hausdorffa: 160 
+ metryka gory: 1857 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 13000 
+sekwencja 2: 1---0 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 3 od struktury 1 wynosi
+ metryka Hausdorffa: 65 
+ metryka gory: 530 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 13000 
+sekwencja 2: 1---0 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 3 od struktury 2 wynosi
+ metryka Hausdorffa: 53 
+ metryka gory: 512 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 13000 
+sekwencja 2: 1--10 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 3 od struktury 6 wynosi
+ metryka Hausdorffa: 60 
+ metryka gory: 515 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 13000 
+sekwencja 2: 1---0 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 3 od struktury 7 wynosi
+ metryka Hausdorffa: 65 
+ metryka gory: 530 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 13000 
+sekwencja 2: 1---0 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 3 od struktury 8 wynosi
+ metryka Hausdorffa: 53 
+ metryka gory: 512 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: --------------130-----00 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 16.666666666666664 
+Punktacja: -16 
+
+odleglosc struktury 3 od struktury 11 wynosi
+ metryka Hausdorffa: 107 
+ metryka gory: 1345 
+ metryka drzewa - procent identycznosci: 16.666666666666664 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 110 
+sekwencja 2: -10 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 6 od struktury 1 wynosi
+ metryka Hausdorffa: 5 
+ metryka gory: 15 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 110 
+sekwencja 2: -10 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 6 od struktury 2 wynosi
+ metryka Hausdorffa: 10 
+ metryka gory: 3 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 1--10 
+sekwencja 2: 13000 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 6 od struktury 3 wynosi
+ metryka Hausdorffa: 60 
+ metryka gory: 515 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 110 
+sekwencja 2: -10 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 6 od struktury 7 wynosi
+ metryka Hausdorffa: 5 
+ metryka gory: 15 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 110 
+sekwencja 2: -10 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 6 od struktury 8 wynosi
+ metryka Hausdorffa: 10 
+ metryka gory: 3 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: --------------------11-0 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 12.5 
+Punktacja: -18 
+
+odleglosc struktury 6 od struktury 11 wynosi
+ metryka Hausdorffa: 167 
+ metryka gory: 1860 
+ metryka drzewa - procent identycznosci: 12.5 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 7 od struktury 1 wynosi
+ metryka Hausdorffa: 0 
+ metryka gory: 0 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 7 od struktury 2 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 1---0 
+sekwencja 2: 13000 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 7 od struktury 3 wynosi
+ metryka Hausdorffa: 65 
+ metryka gory: 530 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: -10 
+sekwencja 2: 110 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 7 od struktury 6 wynosi
+ metryka Hausdorffa: 5 
+ metryka gory: 15 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 7 od struktury 8 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: ---------------------1-0 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 7 od struktury 11 wynosi
+ metryka Hausdorffa: 172 
+ metryka gory: 1875 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 8 od struktury 1 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 8 od struktury 2 wynosi
+ metryka Hausdorffa: 0 
+ metryka gory: 0 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 1---0 
+sekwencja 2: 13000 
+Procent identycznosci: 40.0 
+Punktacja: -1 
+
+odleglosc struktury 8 od struktury 3 wynosi
+ metryka Hausdorffa: 53 
+ metryka gory: 512 
+ metryka drzewa - procent identycznosci: 40.0 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: -10 
+sekwencja 2: 110 
+Procent identycznosci: 66.66666666666666 
+Punktacja: 1 
+
+odleglosc struktury 8 od struktury 6 wynosi
+ metryka Hausdorffa: 10 
+ metryka gory: 3 
+ metryka drzewa - procent identycznosci: 66.66666666666666 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 10 
+sekwencja 2: 10 
+Procent identycznosci: 100.0 
+Punktacja: 2 
+
+odleglosc struktury 8 od struktury 7 wynosi
+ metryka Hausdorffa: 12 
+ metryka gory: 18 
+ metryka drzewa - procent identycznosci: 100.0 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: ---------------------1-0 
+sekwencja 2: 111411200112101001121100 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 8 od struktury 11 wynosi
+ metryka Hausdorffa: 160 
+ metryka gory: 1857 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 1 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: ---------------------1-0 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 11 od struktury 1 wynosi
+ metryka Hausdorffa: 172 
+ metryka gory: 1875 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 2 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: ---------------------1-0 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 11 od struktury 2 wynosi
+ metryka Hausdorffa: 160 
+ metryka gory: 1857 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 3 :
+ .((((((..(((..........)))..((((.......))))........(((((.......)))))..)))))).. 
+ lddddddxxdddssssssssssdddxxddddsssssssddddxxxxxxxxdddddsssssssdddddxxddddddll 
+ l[s][[s]][s]l 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: --------------130-----00 
+Procent identycznosci: 16.666666666666664 
+Punktacja: -16 
+
+odleglosc struktury 11 od struktury 3 wynosi
+ metryka Hausdorffa: 107 
+ metryka gory: 1345 
+ metryka drzewa - procent identycznosci: 16.666666666666664 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 6 :
+ ((..((...))..)). 
+ ddppddsssddppddl 
+ pspl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: --------------------11-0 
+Procent identycznosci: 12.5 
+Punktacja: -18 
+
+odleglosc struktury 11 od struktury 6 wynosi
+ metryka Hausdorffa: 167 
+ metryka gory: 1860 
+ metryka drzewa - procent identycznosci: 12.5 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 7 :
+ (((....)))..... 
+ dddssssdddlllll 
+ sl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: ---------------------1-0 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 11 od struktury 7 wynosi
+ metryka Hausdorffa: 172 
+ metryka gory: 1875 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
+
+struktura nr 11 :
+ ((..((..((..((..((..((..((..))..((..((..((..))..))..))..))..))..))..((..))..((..((..((..((..((..))..))..((..((..))..))..))..))..))..((..((..((..((..))..((..))..))..))..))..))..))..)). 
+ ddppddppddxxddppddppddxxddssddxxddppddppddssddppddppddxxddppddppddxxddssddxxddppddppddxxddppddssddppddxxddppddssddppddxxddppddppddxxddppddppddxxddssddxxddssddxxddppddppddxxddppddppddl 
+ pp[pp[s][ppspp]pp][[s]][[pp[psp][psp]pp]][pp[s][s]pp]ppl 
+
+struktura nr 8 :
+ ......(((..........))).............. 
+ lllllldddssssssssssdddllllllllllllll 
+ lsl 
+Metryka "drzewa" => po dopasowaniu 
+sekwencja 1: 111411200112101001121100 
+sekwencja 2: ---------------------1-0 
+Procent identycznosci: 8.333333333333332 
+Punktacja: -20 
+
+odleglosc struktury 11 od struktury 8 wynosi
+ metryka Hausdorffa: 160 
+ metryka gory: 1857 
+ metryka drzewa - procent identycznosci: 8.333333333333332 
