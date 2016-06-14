@@ -1,3 +1,5 @@
+#Anna Glinka
+#Bioinformatyka sturkturalna
 import re
 import numpy as np
 
