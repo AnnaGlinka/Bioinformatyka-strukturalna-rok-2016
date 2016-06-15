@@ -1,4 +1,4 @@
-#Anna Glinka
+﻿#Anna Glinka
 #Bioinformatyka sturkturalna
 import re
 import numpy as np
@@ -555,18 +555,20 @@ def porownajStruktury(zbior, wyjscie):
             
 if __name__ == "__main__":
     
+    #------------jako sciezka w "" podaj sciezke do pliku z sekwencjami, krore chcesz porownac
     #wejscie
-    sciezka1 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa.txt"
-    sciezka2 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa2.txt"
-    sciezka3 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa3.txt"
-    sciezka4 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa4.txt"
-    sciezka5 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa5.txt"
+    sciezka = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa.txt" #-------Twoja sciezka
+    #sciezka2 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa2.txt"
+    #sciezka3 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa3.txt"
+    #sciezka4 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa4.txt"
+    #sciezka5 = r"E:\Bioinfor_projekt\Struktury_kropkowo_nawiasowa5.txt"
     #wyjscie
   
-    wyjscie = open(r"E:\Bioinfor_projekt\Raport1.txt", "w")
+    #-----------jako wyjscie podaj w "" miejsce do ktorego chcesz zapisac plik wynikowy i jego nazwe
+    wyjscie = open(r"E:\Bioinfor_projekt\Raport1.txt", "w") #--------Twoje wyjscie
     
 
-    zbiorStr = utworzZbiorZPliku(sciezka5)
+    zbiorStr = utworzZbiorZPliku(sciezka)
     porownajStruktury(zbiorStr, wyjscie)
     wyjscie.close()
 
